@@ -4,8 +4,8 @@ import { TareaRepositoryDatabase } from "../tareaRepositoryDatabase";
 import { Tarea } from "../domain/tarea";
 import { DatabaseClient } from '../../config/databaseClient';
 
-const databaseClient = new DatabaseClient(); // Crear una instancia de DatabaseClient
-const tareaRepository = new TareaRepositoryDatabase(databaseClient); // Pasar databaseClient al constructor
+const databaseClient = new DatabaseClient(); 
+const tareaRepository = new TareaRepositoryDatabase(databaseClient); 
 
 export const findAllTarea = (): Tarea[] => {
     try {

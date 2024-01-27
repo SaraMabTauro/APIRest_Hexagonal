@@ -15,7 +15,7 @@ const createTarea_1 = require("../../aplicacion/createTarea"); // Corregida la r
 const createController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { id, titulo, descripcion, fecha_creacion, fecha_limite, estado } = req.body;
-        const created = (0, createTarea_1.createTarea)(id, titulo, fecha_creacion, estado, descripcion, fecha_limite);
+        const created = yield (0, createTarea_1.createTarea)(id, titulo, fecha_creacion, estado, descripcion, fecha_limite);
         if (created) {
             res.status(201).json({ mensaje: 'Tarea creada correctamente' });
         }

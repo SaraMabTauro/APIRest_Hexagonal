@@ -11,10 +11,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.findAllController = void 0;
-const findAllTarea_1 = require("../../aplicacion/findAllTarea"); // Corregida la ruta
+const findAllTarea_1 = require("../../aplicacion/findAllTarea");
 const findAllController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const tareas = (0, findAllTarea_1.findAllTarea)();
+        const tareas = yield (0, findAllTarea_1.findAllTarea)();
         res.status(200).json({ tareas });
     }
     catch (error) {

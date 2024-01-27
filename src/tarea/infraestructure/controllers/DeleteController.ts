@@ -6,7 +6,7 @@ import { deleteTarea } from '../../aplicacion/deleteTarea';
 export const deleteController = async (req: Request, res: Response) => {
     try {
         const idTarea = req.params.id;
-        const deleted = deleteTarea(idTarea);
+        const deleted = await deleteTarea(idTarea);
         if (deleted) {
             res.status(200).json({ mensaje: 'Tarea eliminada correctamente' });
         } else {

@@ -15,7 +15,7 @@ const deleteTarea_1 = require("../../aplicacion/deleteTarea");
 const deleteController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const idTarea = req.params.id;
-        const deleted = (0, deleteTarea_1.deleteTarea)(idTarea);
+        const deleted = yield (0, deleteTarea_1.deleteTarea)(idTarea);
         if (deleted) {
             res.status(200).json({ mensaje: 'Tarea eliminada correctamente' });
         }

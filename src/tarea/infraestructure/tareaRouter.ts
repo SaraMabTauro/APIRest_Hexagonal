@@ -8,7 +8,9 @@ import { deleteController } from '../../tarea/infraestructure/controllers/Delete
 const router = express.Router();
 
 router.post('/tareas', createController);
-router.get('/tareas', findAllController);
+
+router.get('/tareas', findAllController); 
+
 router.delete('/tareas/:id', deleteController)
 
 export { router as tareaRouter };

@@ -34,13 +34,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DatabaseClient = void 0;
 const mysql = __importStar(require("mysql2/promise"));
+require('dotenv').config();
 class DatabaseClient {
     constructor() {
         this.connection = mysql.createPool({
-            host: 'localhost',
-            user: 'root',
-            password: 'D8aw99man@M2',
-            database: 'proyecto5',
+            host: process.env.DB_HOST,
+            user: process.env.DB_USER,
+            password: process.env.DB_PASSWORD,
+            database: process.env.DB_NAME,
             waitForConnections: true,
             connectionLimit: 10,
             queueLimit: 0
