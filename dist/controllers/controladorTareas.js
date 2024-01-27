@@ -11,6 +11,7 @@ class ControladorTareas {
     inicializarRutas() {
         this.router.get('/tareas', this.obtenerTodasTareas.bind(this));
         this.router.post('/tareas', this.agregarTarea.bind(this));
+        this.router.delete('/tareas/:id', this.eliminarTareas.bind(this));
     }
     obtenerTodasTareas(req, res) {
         const tareas = this.servicioTareas.obtenerTodasTareas();
@@ -22,6 +23,11 @@ class ControladorTareas {
         console.log(nuevaTarea);
         this.servicioTareas.agregarTarea(nuevaTarea);
         res.status(201).json({ mensaje: 'Tarea Agregada Correctamnete' });
+    }
+    eliminarTareas(req, res) {
+        const idTarea = req.params.id;
+        this.servicioTareas.eliminarTareas(idTarea);
+        res.status(200).json({ mensaje: 'Tarea eliminada correctamente' });
     }
     obtenerRouter() {
         return this.router;

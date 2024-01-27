@@ -13,5 +13,8 @@ class ServicioTareas {
     obtenerTodasTareas() {
         return this.tareaRepository.obtenerTodasTareas();
     }
+    eliminarTareas(idTarea) {
+        this.tareaRepository.eliminarTareas(idTarea);
+    }
 }
 exports.ServicioTareas = ServicioTareas;

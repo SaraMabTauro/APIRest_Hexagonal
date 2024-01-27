@@ -1,5 +1,3 @@
-//serc/config/databaseClient.ts
-
 import * as mysql from 'mysql2/promise';
 
 class DatabaseClient {
